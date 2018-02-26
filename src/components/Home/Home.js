@@ -10,7 +10,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-            {this.props.user ? <h1>{this.props.user}</h1> : <h1>No User On Session</h1>}
+            
             </div>
         )
     }
