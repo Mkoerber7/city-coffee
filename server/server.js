@@ -65,8 +65,8 @@ passport.use(
                 if(!response[0]) {
                     app
                     .get("db")
-                    .createUserByAuthId([profile.id, profile.displayName])
-                    .then(created => done(null, created[0]));
+                    .createUserByAuthId([profile.id, profile.name.givenName, profile.name.familyName])
+                    .then(created => done(null, created[0])).catch(err => console.log(err));
                 } else {
                     return done(null, response[0]);
                 }
@@ -80,15 +80,22 @@ passport.deserializeUser((user, done) => done(null, user));
 
 // Endpoints 
 
+// Auth0
+
 app.get("/auth", passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/#/",
     failureRedirect: "http://localhost:3210/auth"
   }));
 
-app.get("api/currentuser", (req, res) => {
+// Login
+
+app.get("/api/currentuser", (req, res) => {
+    console.log(req.user);
     if(req.user) res.status(200).json(req.user);
     else res.status(400).json({message: "User Not Logged In"})
 });
+
+//Logout
 
 app.get("api/logout", (req, res) => {
     req.session.destroy(() => {

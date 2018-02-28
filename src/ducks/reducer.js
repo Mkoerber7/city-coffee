@@ -11,8 +11,9 @@ export function getUser() {
     type: GET_USER,
     payload: axios
         .get("/api/currentuser")
-        .then(response => {
-            return response.data;
+        .then(res => {
+            console.log(res.data)
+            return res.data;
         })
         .catch(err => {
             return err.message;
