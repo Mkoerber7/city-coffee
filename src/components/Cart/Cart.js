@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getUser } from "../../ducks/reducer"
 
-class Home extends Component {
-    componentDidMount() {
-        this.props.getUser();
-    }
+class Cart extends Component {
     render() {
         return (
             <div>
-             <h1>City Coffee</h1>
+              <h1>Smokin' on cookie in a hotbox</h1>
             </div>
         )
     }
@@ -18,4 +14,4 @@ class Home extends Component {
 
 const mapStateToProps = state => state;
 
-export default withRouter(connect(mapStateToProps, { getUser })(Home));
+export default connect(mapStateToProps)(Cart);
