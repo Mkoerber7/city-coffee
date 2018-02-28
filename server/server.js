@@ -11,7 +11,8 @@ const path = require("path");
 const port = 3210;
 
 const app = express();
-
+ 
+// Database
 const {
     CONNECTION_STRING,
     DOMAIN,
@@ -24,6 +25,9 @@ massive(CONNECTION_STRING)
     .then(db => {
         app.set("db", db);
     }).catch(console.log);
+
+
+// Middlewares
 
 app.use(json());
 app.use(cors());
@@ -38,8 +42,11 @@ app.use(session({
     })
 );
 
+// Authentication
+
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 passport.use(
     new Auth0Strategy(
@@ -71,9 +78,11 @@ passport.use(
 passport.serializeUser((user, done) => done(null,user));
 passport.deserializeUser((user, done) => done(null, user));
 
+// Endpoints 
+
 app.get("/auth", passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/#/",
-    failureRedirect: "http://localhost:3000/#/login"
+    failureRedirect: "http://localhost:3210/auth"
   }));
 
 app.get("api/currentuser", (req, res) => {
@@ -83,7 +92,7 @@ app.get("api/currentuser", (req, res) => {
 
 app.get("api/logout", (req, res) => {
     req.session.destroy(() => {
-        res.redirect("http://localhost:3000/#/login")
+        res.redirect("http://localhost:3000/#/")
     })
 });
 

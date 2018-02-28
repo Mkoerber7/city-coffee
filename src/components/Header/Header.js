@@ -6,9 +6,11 @@ const Header = () => {
     return (
     <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">CITY COFFEE</h1>
-          <Link to="/"><p>Home</p></Link>
-          <Link to="/login"><p>Login</p></Link>
+
+          <ul class = 'nav-container'>
+            <li><Link to="/">Home</Link></li>
+            <li><a href={process.env.REACT_APP_LOGIN}>Login</a></li>
+          </ul>
         </header>
     )
 };

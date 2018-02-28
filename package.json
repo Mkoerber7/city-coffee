@@ -10,6 +10,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "massive": "^4.7.0",
+    "node-sass-chokidar": "^0.0.3",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.1",
     "react": "^16.2.0",
@@ -21,6 +22,7 @@
     "redux-promise-middleware": "^5.0.0"
   },
   "scripts": {
+    "sass" : "sass --watch src/styles/scss:src/styles/css/", 
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
