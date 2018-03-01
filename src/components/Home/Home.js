@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getUser } from "../../ducks/reducer"
+import { getUser } from "../../ducks/user"
 
 class Home extends Component {
     componentDidMount() {

@@ -1,10 +1,10 @@
 import React from "react";
-import logo from '../../City-wok-guy.png';
+import footerBeans from '../assets/footerBeans.png'
 
 const Footer = () => {
     return (
-        <footer className = "App-footer">
-          <img src={logo} className="Footer-logo" alt="logo" />
+        <footer>
+          <img className='app-footer' src={footerBeans} alt="footer" />
         </footer>
     )
 }

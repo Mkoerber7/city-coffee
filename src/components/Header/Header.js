@@ -1,8 +1,13 @@
 import React from "react";
-import logo from '../../City-wok-guy.png';
+import logo from '../assets/City-wok-guy.png';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-const Header = () => {
+
+const Header = (props) => {
+  console.log(props)
+
     return (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -13,11 +18,13 @@ const Header = () => {
             <li><Link to='/about'>About</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li><Link to='/cart'>Cart</Link></li>
-            <li><a href={process.env.REACT_APP_LOGIN}>Login</a></li>
+            {props.user.id ? <li><a href={process.env.REACT_APP_LOGOUT}>Logout</a></li> : <li><a href={process.env.REACT_APP_LOGIN}>Login</a></li>}
           </ul>
         </header>
     )
 };
 
-export default Header;
+const mapStateToProps = state => state;
+
+export default withRouter(connect(mapStateToProps)(Header));
 

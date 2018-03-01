@@ -80,7 +80,7 @@ passport.deserializeUser((user, done) => done(null, user));
 
 // Endpoints 
 
-// Auth0 things
+// Auth0 - 
 
 app.get("/auth", passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/#/",
@@ -97,11 +97,19 @@ app.get("/api/currentuser", (req, res) => {
 
 //Logout
 
-app.get("api/logout", (req, res) => {
+app.get("/api/logout", (req, res) => {
+    console.log(req)
+    req.logout();
     req.session.destroy(() => {
         res.redirect("http://localhost:3000/#/")
     })
 });
+
+//get products
+
+app.get("/api/products", (req,res) => {
+    
+})
 
 // app.get("/api/test", (req, res) => {
 //     req.app

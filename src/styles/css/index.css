@@ -140,10 +140,9 @@ body {
   padding-bottom: 20px; }
 
 .App-header {
-  background-color: #490905;
+  background-color: #2e4052;
   height: 100px;
-  padding: 20px;
-  color: #C2A67C; }
+  padding: 20px; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -168,29 +167,19 @@ body {
   margin: 0 10px; }
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  font-size: 20px; }
+  font-size: 20px;
+  font-size: 1em;
+  font-weight: 400; }
 
-.App-footer {
-  background-color: #C2A67C;
-  height: 60px;
+.app-footer {
+  background-color: #2e4052;
+  height: 300px;
   width: 100%;
-  color: white;
-  text-align: center;
   position: absolute;
   bottom: 0; }
 
-.Footer-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40px;
-  margin-top: .5em; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
 h1 {
   font-size: 24px; }
 

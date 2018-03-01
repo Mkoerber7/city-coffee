@@ -6,6 +6,8 @@ const GET_USER = "GET_USER";
 
 // ACTION CREATORS
 
+//Get Users from database
+
 export function getUser() {
     return {
     type: GET_USER,
@@ -31,7 +33,7 @@ const initialState = {
     errMessage: null
 };
 
-export default function reducer(state = initialState, action) {
+export default function user(state = initialState, action) {
     switch(action.type) {
         case `${GET_USER}_PENDING`:
             return Object.assign({}, state, { isLoading: true });
