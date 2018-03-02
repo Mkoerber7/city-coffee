@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 
 
 const Header = (props) => {
-  console.log(props)
 
     return (
         <header className="App-header">

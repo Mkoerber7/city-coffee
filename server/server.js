@@ -108,8 +108,14 @@ app.get("/api/logout", (req, res) => {
 //get products
 
 app.get("/api/products", (req,res) => {
-    
-})
+    req.app
+      .get("db")
+      .getProducts()
+      .then(response => {
+          console.log(response)
+          res.json(response);
+        }).catch(console.log)
+});
 
 // app.get("/api/test", (req, res) => {
 //     req.app
