@@ -42,7 +42,7 @@ export function getProducts() {
         .get("/api/products")
         .then(response => {
             console.log(response + `From get products in reducer`)
-            return response;
+            return response.data;
         }).catch(console.log)
     }
 }

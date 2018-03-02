@@ -1,8 +1,9 @@
 .app-footer {
-  background-color: #2e4052;
-  height: 300px;
-  width: 100%;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1F2421;
+  color: #DCE1DE; }
 
 /*# sourceMappingURL=Footer.css.map */

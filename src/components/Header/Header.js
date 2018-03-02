@@ -9,7 +9,7 @@ const Header = (props) => {
 
     return (
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img className="App-logo" src={logo} alt="logo" />
 
           <ul className = 'nav-container'>
             <li><Link to="/">Home</Link></li>
