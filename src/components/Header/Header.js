@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../assets/City-wok-guy.png';
+import logo from '../assets/Hank_Hill.png';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";

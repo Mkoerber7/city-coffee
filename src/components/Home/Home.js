@@ -10,7 +10,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-             <h1>City Coffee</h1>
+             <h1>Strickland Propane</h1>
             </div>
         )
     }
