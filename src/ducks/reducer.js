@@ -4,6 +4,7 @@ import axios from "axios";
 
 const GET_USER = "GET_USER";
 const GET_PRODUCTS = "GET_PRODUCTS"
+const GET_ONE_PRODUCT = "GET_ONE_PRODUCT"
 
 // ACTION CREATORS
 
@@ -44,8 +45,20 @@ export function getProducts() {
             console.log(response + `From get products in reducer`)
             return response.data;
         }).catch(console.log)
-    }
-}
+    };
+};
+
+export function getOneProduct() {
+    return {
+        type: GET_ONE_PRODUCT,
+        payload: axios
+            .get("/api/product/:id")
+            .then(res => {
+                return res.data;
+            })
+            .catch(console.log)
+    };
+};
 
 // INITIAL STATE
 

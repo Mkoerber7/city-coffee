@@ -6,6 +6,7 @@ import Shop from "./components/Shop/Shop";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Cart from "./components/Cart/Cart";
+import Product from "./components/Product/Product";
 
 export default (
     <Switch>
@@ -14,6 +15,7 @@ export default (
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/cart" component={Cart} />
+        <Route path="/product/:id" component={Product} />
 
         <Route path="*" render={() => (
             <div>
