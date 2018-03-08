@@ -90,7 +90,7 @@ app.get("/auth", passport.authenticate("auth0", {
 // Login
 
 app.get("/api/currentuser", (req, res) => {
-    console.log(req.user);
+    console.log("from current user", req.user);
     if(req.user) res.status(200).json(req.user);
     else res.status(400).json({message: "User Not Logged In"})
 });
@@ -112,19 +112,19 @@ app.get("/api/products", (req,res) => {
       .get("db")
       .getProducts()
       .then(response => {
-          console.log(response)
           res.json(response);
         }).catch(console.log)
 });
 
 // add to cart
 
-app.post("/api/cart/add", (req, res) => {
+app.post("/api/addtocart", (req, res) => {
     const db = req.app.get("db");
-    const { user_id } = req.user;
-    const { product_id, quantity, total_price, individual_price } = req.body;
+    console.log("addtocart", req.user);
+    const { id } = req.user;
+    const { product_id, quantity } = req.body;
     db
-      .addToCart([user_id, product_id, quantity, total_price, individual_price])
+      .addToCart([id, product_id, quantity])
       .then(cart => res.status(200).json(cart))
       .catch(err => {
           res.status(500).json(err);

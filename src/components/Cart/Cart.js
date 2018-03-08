@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 // import { withRouter } from "react-router-dom";
 
 class Cart extends Component {
+    constructor(props) {
+        super(props)
+    };
+    
     render() {
         return (
             <div>
