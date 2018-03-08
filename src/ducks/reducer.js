@@ -3,8 +3,9 @@ import axios from "axios";
 // CONSTANTS
 
 const GET_USER = "GET_USER";
-const GET_PRODUCTS = "GET_PRODUCTS"
-const GET_ONE_PRODUCT = "GET_ONE_PRODUCT"
+const GET_PRODUCTS = "GET_PRODUCTS";
+const ADD_TO_CART = "ADD_TO_CART";
+// const GET_ONE_PRODUCT = "GET_ONE_PRODUCT"
 
 // ACTION CREATORS
 
@@ -13,6 +14,7 @@ const GET_ONE_PRODUCT = "GET_ONE_PRODUCT"
 const initialState = {
     user: [],
     products: [],
+    cart: [],
     isLoading: false,
     didErr: false,
     errMessage: null
@@ -48,17 +50,35 @@ export function getProducts() {
     };
 };
 
-export function getOneProduct() {
+export function addToCart(product, amount, price, individual) {
     return {
-        type: GET_ONE_PRODUCT,
+        type: ADD_TO_CART,
         payload: axios
-            .get("/api/product/:id")
+            .post("/api/cart/add", {
+                product_id: product,
+                quantity: amount,
+                total_price: price,
+                individual_price: individual
+            })
             .then(res => {
                 return res.data;
-            })
-            .catch(console.log)
+            }).catch(console.log)
     };
 };
+
+// export function getOneProduct() {
+//     return {
+//         type: GET_ONE_PRODUCT,
+//         payload: axios
+//             .get("/api/product/:id")
+//             .then(res => {
+//                 return res.data;
+//             })
+//             .catch(console.log)
+//     };
+// };
+
+
 
 // INITIAL STATE
 
@@ -82,6 +102,15 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, products: action.payload});
     
         case `${GET_PRODUCTS}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
+
+        case `${ADD_TO_CART}_PENDING`:
+            return Object.assign({}, state, { isLoading: true });
+
+        case `${ADD_TO_CART}_FULFILLED`:
+            return Object.assign({}, state, { isLoading: false, products: action.payload});
+    
+        case `${ADD_TO_CART}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         default:

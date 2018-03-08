@@ -117,6 +117,20 @@ app.get("/api/products", (req,res) => {
         }).catch(console.log)
 });
 
+// add to cart
+
+app.post("/api/cart/add", (req, res) => {
+    const db = req.app.get("db");
+    const { user_id } = req.user;
+    const { product_id, quantity, total_price, individual_price } = req.body;
+    db
+      .addToCart([user_id, product_id, quantity, total_price, individual_price])
+      .then(cart => res.status(200).json(cart))
+      .catch(err => {
+          res.status(500).json(err);
+      });
+});
+
 // app.get("/api/test", (req, res) => {
 //     req.app
 //     .get('db')

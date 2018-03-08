@@ -8,4 +8,9 @@
   height: 200px;
   width: 200px; }
 
+.shop-container {
+  height: auto;
+  display: inline-block;
+  position: absolute; }
+
 /*# sourceMappingURL=Shop.css.map */

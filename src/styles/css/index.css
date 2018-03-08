@@ -142,12 +142,12 @@ body {
 
 .App-header {
   background-color: #fccb2e;
-  height: 100px;
-  padding: 20px; }
+  height: 6em;
+  padding: 1em; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 70px;
+  height: 4.5em;
   margin-left: 3em; }
 
 @keyframes App-logo-spin {
@@ -164,8 +164,8 @@ body {
   margin-top: 3em; }
 
 .nav-container li {
-  padding-right: 5px;
-  margin: 0 10px; }
+  padding-right: .5em;
+  margin: 0 .5em; }
 
 a {
   color: #050505;
@@ -179,6 +179,8 @@ a {
   bottom: 0;
   width: 100%;
   height: 50px;
+  padding: 2em;
+  margin-top: 50px;
   background-color: #366ccb;
   color: #DCE1DE; }
 
@@ -194,5 +196,18 @@ h1 {
 .product-img {
   height: 200px;
   width: 200px; }
+
+.shop-container {
+  height: auto;
+  display: inline-block;
+  position: absolute; }
+
+.big-img {
+  height: 20em;
+  width: 20em; }
+
+.product-container {
+  text-align: center;
+  height: auto; }
 
 /*# sourceMappingURL=index.css.map */

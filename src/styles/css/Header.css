@@ -1,11 +1,11 @@
 .App-header {
   background-color: #fccb2e;
-  height: 100px;
-  padding: 20px; }
+  height: 6em;
+  padding: 1em; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 70px;
+  height: 4.5em;
   margin-left: 3em; }
 
 @keyframes App-logo-spin {
@@ -22,8 +22,8 @@
   margin-top: 3em; }
 
 .nav-container li {
-  padding-right: 5px;
-  margin: 0 10px; }
+  padding-right: .5em;
+  margin: 0 .5em; }
 
 a {
   color: #050505;
