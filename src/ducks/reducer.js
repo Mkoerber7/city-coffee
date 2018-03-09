@@ -61,22 +61,6 @@ export function addToCart(user_id, product_id, quantity) {
     };
 };
 
-// export function getOneProduct() {
-//     return {
-//         type: GET_ONE_PRODUCT,
-//         payload: axios
-//             .get("/api/product/:id")
-//             .then(res => {
-//                 return res.data;
-//             })
-//             .catch(console.log)
-//     };
-// };
-
-
-
-// INITIAL STATE
-
 
 export default function reducer (state = initialState, action) {
     console.log(action.type)

@@ -9,8 +9,9 @@
   width: 200px; }
 
 .shop-container {
+  margin: 0 auto;
+  padding: 10px;
   height: auto;
-  display: inline-block;
-  position: absolute; }
+  display: inline-block; }
 
 /*# sourceMappingURL=Shop.css.map */
