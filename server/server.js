@@ -11,7 +11,8 @@ const path = require("path");
 const port = 3210;
 
 const app = express();
- 
+
+
 // Database
 const {
     CONNECTION_STRING,
@@ -22,9 +23,9 @@ const {
 } = process.env
 
 massive(CONNECTION_STRING)
-    .then(db => {
-        app.set("db", db);
-    }).catch(console.log);
+.then(db => {
+    app.set("db", db);
+}).catch(console.log);
 
 
 // Middlewares
@@ -33,13 +34,13 @@ app.use(json());
 app.use(cors());
 // app.use(express.static(`${__dirname}/../build`));
 app.use(session({
-        secret: SESSION_SECRET,
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 100000
-        }
-    })
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 100000
+    }
+})
 );
 
 // Authentication
@@ -47,6 +48,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+const currentUser = [];
 
 passport.use(
     new Auth0Strategy(
@@ -91,8 +93,10 @@ app.get("/auth", passport.authenticate("auth0", {
 
 app.get("/api/currentuser", (req, res) => {
     console.log("from current user", req.user);
-    if(req.user) res.status(200).json(req.user);
-    else res.status(400).json({message: "User Not Logged In"})
+    if(req.user) {
+        currentUser.push(req.user);
+        res.status(200).json(req.user);
+    } else res.status(400).json({message: "User Not Logged In"})
 });
 
 //Logout
@@ -122,10 +126,24 @@ app.post("/api/addtocart", (req, res) => {
     const db = req.app.get("db");
     console.log("addtocart", req.user);
     const { id } = req.user;
-    const { product_id, quantity } = req.body;
+    const { product_id, cart_quantity } = req.body;
     db
-      .addToCart([id, product_id, quantity])
+      .addToCart([id, product_id, cart_quantity])
       .then(cart => res.status(200).json(cart))
+      .catch(err => {
+          res.status(500).json(err);
+      });
+});
+
+app.get("/api/getCart", (req, res) => {
+    const db= req.app.get("db");
+    console.log("current user from server", currentUser[0].id)
+    const userId = currentUser[0].id;
+    db
+      .viewCart(userId)
+      .then(cart => {
+          console.log("cart from cerver" ,cart);
+          res.status(200).json(cart)})
       .catch(err => {
           res.status(500).json(err);
       });

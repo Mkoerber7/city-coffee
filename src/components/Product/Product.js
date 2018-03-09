@@ -20,7 +20,7 @@ class Product extends Component {
             console.log('This is productDetails.id: ',productDetails.id);
             let product_id = productDetails.id;
             console.log('this is product_id: ', product_id);
-            let quantity = productDetails.quantity;
+            let cart_quantity = productDetails.cart_quantity;
         
         return(
             <div className="product-container">
@@ -28,7 +28,7 @@ class Product extends Component {
               {productDetails.name}
               {productDetails.price}
 
-              <button onClick = {() => this.props.addToCart(user_id, product_id, quantity)}>Add to Cart</button>
+              <button onClick = {() => this.props.addToCart(user_id, product_id, cart_quantity)}>Add to Cart</button>
             </div>
             
         )}}

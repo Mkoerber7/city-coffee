@@ -5,6 +5,7 @@ import axios from "axios";
 const GET_USER = "GET_USER";
 const GET_PRODUCTS = "GET_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
+const GET_CART = "GET_CART";
 
 
 const initialState = {
@@ -46,15 +47,27 @@ export function getProducts() {
     };
 };
 
-export function addToCart(user_id, product_id, quantity) {
+export function addToCart(user_id, product_id, cart_quantity) {
     return {
         type: ADD_TO_CART,
         payload: axios
             .post("/api/addtocart", {
                 user_id: user_id,
                 product_id: product_id,
-                quantity: quantity,
+                cart_quantity: 1,
             })
+            .then(res => {
+                return res.data;
+            }).catch(console.log)
+    };
+};
+
+export function getCart() {
+
+    return {
+        type: GET_CART,
+        payload: axios
+            .get("/api/getCart")
             .then(res => {
                 return res.data;
             }).catch(console.log)
@@ -93,6 +106,15 @@ export default function reducer (state = initialState, action) {
     
         case `${ADD_TO_CART}_REJECTED`:
         console.log(`now im rejected`)
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
+
+        case `${GET_CART}_PENDING`:
+            return Object.assign({}, state, { isLoading: true});
+
+        case`${GET_CART}_FULFILLED`:
+            return Object.assign({}, state, { isLoading: false, cart: action.payload});
+
+        case`${GET_CART}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         default:

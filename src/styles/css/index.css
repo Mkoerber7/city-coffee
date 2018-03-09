@@ -212,7 +212,11 @@ h1 {
 
 .product-container {
   text-align: center;
-  height: auto; }
+  margin: 0 auto;
+  padding: 10px;
+  height: 31.5em;
+  width: 100%;
+  display: inline-block; }
 
 .cart-container {
   margin: 0 auto;
