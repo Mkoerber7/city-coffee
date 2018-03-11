@@ -92,7 +92,6 @@ app.get("/auth", passport.authenticate("auth0", {
 // Login
 
 app.get("/api/currentuser", (req, res) => {
-    console.log("from current user", req.user);
     if(req.user) {
         currentUser.push(req.user);
         res.status(200).json(req.user);
@@ -102,7 +101,6 @@ app.get("/api/currentuser", (req, res) => {
 //Logout
 
 app.get("/api/logout", (req, res) => {
-    console.log(req)
     req.logout();
     req.session.destroy(() => {
         res.redirect("http://localhost:3000/#/")
@@ -124,7 +122,6 @@ app.get("/api/products", (req,res) => {
 
 app.post("/api/addtocart", (req, res) => {
     const db = req.app.get("db");
-    console.log("addtocart", req.user);
     const { id } = req.user;
     const { product_id, cart_quantity } = req.body;
     db
@@ -136,16 +133,27 @@ app.post("/api/addtocart", (req, res) => {
 });
 
 app.get("/api/getCart", (req, res) => {
-    const db= req.app.get("db");
-    console.log("current user from server", currentUser[0].id)
+    const db = req.app.get("db");
     const userId = currentUser[0].id;
     db
       .viewCart(userId)
       .then(cart => {
-          console.log("cart from cerver" ,cart);
           res.status(200).json(cart)})
       .catch(err => {
           res.status(500).json(err);
+      });
+});
+
+app.delete("/api/removeOneCart", (req, res) => {
+    const db = req.app.get("db");
+    const userId = currentUser[0].id;
+    const { product_id } = req.body;
+    db
+      .removeOneCart([userId, product_id])
+      .then( cart => {
+          res.status(200).json(cart)
+      }).catch(err => {
+          res.status(500).json(cart);
       });
 });
 

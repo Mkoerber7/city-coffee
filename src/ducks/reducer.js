@@ -6,6 +6,7 @@ const GET_USER = "GET_USER";
 const GET_PRODUCTS = "GET_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_CART = "GET_CART";
+const REMOVE_ONE_CART = "REMOVE_ONE_CART";
 
 
 const initialState = {
@@ -63,11 +64,21 @@ export function addToCart(user_id, product_id, cart_quantity) {
 };
 
 export function getCart() {
-
     return {
         type: GET_CART,
         payload: axios
             .get("/api/getCart")
+            .then(res => {
+                return res.data;
+            }).catch(console.log)
+    };
+};
+
+export function removeOne() {
+    return {
+        type: REMOVE_ONE_CART,
+        payload: axios
+            .delete("/api/removeOneCart")
             .then(res => {
                 return res.data;
             }).catch(console.log)
@@ -97,15 +108,12 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         case `${ADD_TO_CART}_PENDING`:
-        console.log(`now im pending`)
             return Object.assign({}, state, { isLoading: true });
 
         case `${ADD_TO_CART}_FULFILLED`:
-        console.log(`now im fulfilled`, action.payload)
             return Object.assign({}, state, { isLoading: false, cart: action.payload});
     
         case `${ADD_TO_CART}_REJECTED`:
-        console.log(`now im rejected`)
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         case `${GET_CART}_PENDING`:
@@ -115,6 +123,15 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, cart: action.payload});
 
         case`${GET_CART}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
+
+        case `${REMOVE_ONE_CART}_PENDING`:
+            return Object.assign({}, state, { isLoading: true});
+
+        case `${REMOVE_ONE_CART}_FULFILLED`:
+            return Object.assign({}, state, { isLoading: false, cart: action.payload});
+
+        case `${REMOVE_ONE_CART}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         default:

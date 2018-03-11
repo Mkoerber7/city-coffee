@@ -15,11 +15,14 @@ componentDidMount() {
     render() {
         let cartView;
         console.log(this.props.cart);
-        if(this.props.cart.length !== 0) {
+        if(this.props.cart.length !== undefined && this.props.cart.length !== 0) {
             cartView = this.props.cart.map((curr, index) => {
                 return(
                     <div className="cart-products" key = {index}>
+                        <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
                         <h2>{curr.name}</h2>
+                        <div>{curr.price}</div>
+                        <div>{curr.cart_quantity}</div>
                     </div>
                 )
             })
