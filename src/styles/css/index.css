@@ -140,14 +140,13 @@ body {
   background-color: #73ace3; }
 
 .App-header {
-  background-color: #fccb2e;
+  background-color: white;
   height: 6em;
   padding: 1em; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 4.5em;
-  margin-left: 3em; }
+  height: 5.5em; }
 
 @keyframes App-logo-spin {
   from {
@@ -221,9 +220,12 @@ h1 {
 .cart-container {
   margin: 0 auto;
   padding: 10px;
-  height: 31.5em;
+  height: auto;
   width: 100%;
   display: inline-block; }
+
+.cart-total {
+  float: right; }
 
 .about-container {
   margin: 0 auto;

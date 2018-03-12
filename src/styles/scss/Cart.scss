@@ -1,7 +1,11 @@
 .cart-container {
     margin: 0 auto;
     padding: 10px;
-    height: 31.5em;
+    height: auto;
     width: 100%;
     display: inline-block;
+}
+
+.cart-total {
+    float: right;
 }

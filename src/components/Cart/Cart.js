@@ -13,7 +13,20 @@ componentDidMount() {
     this.props.getCart();
 }
 
-handleDelete(product) {
+handleTotal = () => {
+    const { cart } = this.props;
+    let cartTotal;
+    if(cart !== undefined && cart.length !== 0) {
+        cartTotal = cart.map((curr, index) => {
+            return (curr.price);
+        }).reduce(function(a,b){
+            return a+b;
+        });
+    }
+    return cartTotal;
+}
+
+handleDelete = (product) => {
     const {user, removeOne, getCart} = this.props;
     removeOne(product);
     getCart();
@@ -27,7 +40,7 @@ handleDelete(product) {
                     <div className="cart-products" key = {index}>
                         <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
                         <h2>{curr.name}</h2>
-                        <div>{curr.price}</div>
+                        <div>{curr.price * curr.cart_quantity}</div>
                         <div>{curr.cart_quantity}</div>
                         <button onClick = {() => {this.handleDelete(curr.product_id)}}>Delete</button>
                     </div>
@@ -38,6 +51,7 @@ handleDelete(product) {
             <div className="cart-container">
               <h1>Shopping Cart</h1>
               { cartView }
+              <div className = 'cart-total'><h3>Total: {this.handleTotal()}</h3></div>
             </div>
         )
     }

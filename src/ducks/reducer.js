@@ -48,14 +48,15 @@ export function getProducts() {
     };
 };
 
-export function addToCart(user_id, product_id, cart_quantity) {
+export function addToCart(user_id, product_id, cart_quantity=1) {
+    console.log(user_id, product_id, cart_quantity)
     return {
         type: ADD_TO_CART,
         payload: axios
             .post("/api/addtocart", {
                 user_id: user_id,
                 product_id: product_id,
-                cart_quantity: 1,
+                cart_quantity: cart_quantity,
             })
             .then(res => {
                 return res.data;

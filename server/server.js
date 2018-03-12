@@ -126,6 +126,7 @@ app.post("/api/addtocart", (req, res) => {
     const db = req.app.get("db");
     const { id } = req.user;
     const { product_id, cart_quantity } = req.body;
+    console.log(product_id, cart_quantity, id)
     db
       .addToCart([id, product_id, cart_quantity])
       .then(cart => res.status(200).json(cart))

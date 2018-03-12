@@ -6,13 +6,27 @@ import { addToCart } from '../../ducks/reducer';
 class Product extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            quantity: 1,
+            total: 0
+        }
+
+        this.handleQuantity = this.handleQuantity.bind(this);
+    }
+
+
+    handleQuantity = (val) => {
+        this.setState({
+            quantity: val.target.value,
+            total : this.props.products[this.props.match.params.id].price * parseInt(val.target.value)
+        });
     }
 
 
     render() {
         console.log('product on state: ', this.props.products);
-        let singleProductView = () => {
-        if(this.props.products.length !== undefined && this.props.products.length !== 0) {
+        let singleProductView = this.props.products.length > 0
             let id = this.props.match.params.id;
             console.log(this.props.products);
             let productDetails = this.props.products[`${id}`];
@@ -20,20 +34,19 @@ class Product extends Component {
             console.log('This is productDetails.id: ',productDetails.id);
             let product_id = productDetails.id;
             console.log('this is product_id: ', product_id);
-            let cart_quantity = productDetails.cart_quantity;
         
         return(
             <div className="product-container">
+            {productDetails.name}
             <img className="big-img" src={require(`../assets/${productDetails.img_url}`)} alt="product images"/>
-              {productDetails.name}
-              {productDetails.price}
-
-              <button onClick = {() => this.props.addToCart(user_id, product_id, cart_quantity)}>Add to Cart</button>
+            {productDetails.price}
+            <div>Enter Quantity<input value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
+            <button onClick = {() => this.props.addToCart(user_id, product_id, this.state.quantity)}>Add to Cart</button>
             </div>
             
-        )}}
+        )
         //The render method's return is below
-        return(singleProductView());
+        return { singleProductView };
     }
 }
 
