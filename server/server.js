@@ -49,6 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const currentUser = [];
+const allProducts = [];
 
 passport.use(
     new Auth0Strategy(
@@ -114,6 +115,7 @@ app.get("/api/products", (req,res) => {
       .get("db")
       .getProducts()
       .then(response => {
+          allProducts.push(response)
           res.json(response);
         }).catch(console.log)
 });
@@ -144,16 +146,16 @@ app.get("/api/getCart", (req, res) => {
       });
 });
 
-app.delete("/api/removeOneCart", (req, res) => {
+app.delete("/api/cart/:product_id", (req, res) => {
     const db = req.app.get("db");
     const userId = currentUser[0].id;
     const { product_id } = req.body;
     db
-      .removeOneCart([userId, product_id])
+      .removeOne(product_id, userId)
       .then( cart => {
           res.status(200).json(cart)
       }).catch(err => {
-          res.status(500).json(cart);
+          res.status(500).json(err);
       });
 });
 
@@ -170,5 +172,5 @@ app.delete("/api/removeOneCart", (req, res) => {
 // });
 
 app.listen(port, () => {
-    console.log(`Listening on Port: ${port}`);
+    console.log(`I be ouch here listening on port: ${port}`);
 });

@@ -6,7 +6,7 @@ const GET_USER = "GET_USER";
 const GET_PRODUCTS = "GET_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_CART = "GET_CART";
-const REMOVE_ONE_CART = "REMOVE_ONE_CART";
+const REMOVE_ONE = "REMOVE_ONE";
 
 
 const initialState = {
@@ -74,11 +74,12 @@ export function getCart() {
     };
 };
 
-export function removeOne() {
+export function removeOne(product) {
+    console.log(product);
     return {
-        type: REMOVE_ONE_CART,
+        type: REMOVE_ONE,
         payload: axios
-            .delete("/api/removeOneCart")
+            .delete(`/api/cart/${product}`, {data: {"product": product}})
             .then(res => {
                 return res.data;
             }).catch(console.log)
@@ -125,13 +126,13 @@ export default function reducer (state = initialState, action) {
         case`${GET_CART}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
-        case `${REMOVE_ONE_CART}_PENDING`:
+        case `${REMOVE_ONE}_PENDING`:
             return Object.assign({}, state, { isLoading: true});
 
-        case `${REMOVE_ONE_CART}_FULFILLED`:
+        case `${REMOVE_ONE}_FULFILLED`:
             return Object.assign({}, state, { isLoading: false, cart: action.payload});
 
-        case `${REMOVE_ONE_CART}_REJECTED`:
+        case `${REMOVE_ONE}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         default:

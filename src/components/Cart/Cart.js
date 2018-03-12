@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { withRouter } from "react-router-dom";
-import { getCart } from "../../ducks/reducer" 
+import { getCart, removeOne } from "../../ducks/reducer" 
 
 class Cart extends Component {
     constructor(props) {
         super(props)
+
+    this.handleDelete = this.handleDelete.bind(this);
     };
 
 componentDidMount() {
     this.props.getCart();
 }
+
+handleDelete(product) {
+    const {user, removeOne, getCart} = this.props;
+    removeOne(product);
+    getCart();
+}
     
     render() {
         let cartView;
-        console.log(this.props.cart);
         if(this.props.cart.length !== undefined && this.props.cart.length !== 0) {
             cartView = this.props.cart.map((curr, index) => {
                 return(
@@ -23,6 +29,7 @@ componentDidMount() {
                         <h2>{curr.name}</h2>
                         <div>{curr.price}</div>
                         <div>{curr.cart_quantity}</div>
+                        <button onClick = {() => {this.handleDelete(curr.product_id)}}>Delete</button>
                     </div>
                 )
             })
@@ -38,4 +45,4 @@ componentDidMount() {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps, { getCart })(Cart);
+export default connect(mapStateToProps, { getCart, removeOne })(Cart);
