@@ -10,7 +10,7 @@ class Shop extends Component {
   }
     render() {
       let productList;
-      if(this.props.products.length !== 0) {
+      if(this.props.products.length !== undefined && this.props.products.length !== 0) {
         productList = this.props.products.map((curr, index) => {
         return (<Link to = {`/product/${index}`} key = {index}> <div className='products-container' key = {index}>
         <h2>{curr.name}</h2>

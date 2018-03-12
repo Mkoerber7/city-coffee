@@ -75,7 +75,6 @@ export function getCart() {
 };
 
 export function removeOne(product) {
-    console.log(product);
     return {
         type: REMOVE_ONE,
         payload: axios

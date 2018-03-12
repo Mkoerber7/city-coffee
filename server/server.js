@@ -149,9 +149,9 @@ app.get("/api/getCart", (req, res) => {
 app.delete("/api/cart/:product_id", (req, res) => {
     const db = req.app.get("db");
     const userId = currentUser[0].id;
-    const { product_id } = req.body;
+    const product = req.body.product;
     db
-      .removeOne(product_id, userId)
+      .removeOne(userId, product)
       .then( cart => {
           res.status(200).json(cart)
       }).catch(err => {
