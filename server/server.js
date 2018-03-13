@@ -160,6 +160,19 @@ app.delete("/api/cart/:product_id", (req, res) => {
       });
 });
 
+app.put("/api/cart/quantity", (req, res) => {
+    const db = req.app.get("db");
+    const userId = currentUser[0].id;
+    const { product_id, cart_quantity } = req.body;
+    db
+      .updateQuantity(userId, product_id, cart_quantity)
+      .then( cart => {
+          res.status(200).json(cart)})
+      .catch(err => {
+          res.status(500).json(err);
+      });    
+});
+
 // app.get("/api/test", (req, res) => {
 //     req.app
 //     .get('db')
@@ -173,5 +186,5 @@ app.delete("/api/cart/:product_id", (req, res) => {
 // });
 
 app.listen(port, () => {
-    console.log(`I be ouch here listening on port: ${port}`);
+    console.log(`I'm deadass listening on port: ${port}`);
 });

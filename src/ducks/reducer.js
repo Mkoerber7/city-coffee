@@ -7,6 +7,7 @@ const GET_PRODUCTS = "GET_PRODUCTS";
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_CART = "GET_CART";
 const REMOVE_ONE = "REMOVE_ONE";
+const UPDATE_QUANTITY = "UPDATE_QUANTITY";
 
 
 const initialState = {
@@ -86,6 +87,21 @@ export function removeOne(product) {
     };
 };
 
+export function updateQuantity(user_id, product_id, cart_quantity) {
+    return {
+        type: UPDATE_QUANTITY,
+        payload: axios
+            .put("/api/cart/quantity", {
+                user_id: user_id,
+                product_id: product_id,
+                cart_quantity: cart_quantity
+            })
+            .then(res => {
+                return res.data;
+            }).catch(console.log)
+    };
+};
+
 
 export default function reducer (state = initialState, action) {
     console.log(action.type)
@@ -133,6 +149,15 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: false, cart: action.payload});
 
         case `${REMOVE_ONE}_REJECTED`:
+            return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
+
+        case `${UPDATE_QUANTITY}_PENDING`:
+            return Object.assign({}, state, { isLoading: true});
+
+        case `${UPDATE_QUANTITY}_FULFILLED`:
+            return Object.assign({}, state, { isLoading: false, cart: action.payload});
+
+        case `${UPDATE_QUANTITY}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});
 
         default:

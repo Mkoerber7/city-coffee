@@ -130,22 +130,21 @@ table {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  background-image: linear-gradient(to bottom, #FCCB2E, #FAA916, #366CCB); }
 
 .App {
   min-height: 100%;
   position: relative;
   overflow: hidden;
-  display: block;
-  background-color: #73ace3; }
+  display: block; }
 
 .App-header {
-  background-color: white;
-  height: 5em;
-  padding: 1em; }
+  height: 6em;
+  padding: 1em;
+  border-bottom: 2px solid black; }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 6em;
   float: left; }
 
@@ -158,14 +157,15 @@ body {
   float: left;
   margin-left: 2em;
   margin-top: 1.3em;
-  color: #cc0b14; }
+  color: #cc0b14;
+  font-size: 1.5em; }
 
 .nav-container {
   display: flex;
   float: right;
   flex-direction: row;
   list-style-type: none;
-  margin-right: 2em;
+  margin-right: 1em;
   margin-top: 3em; }
 
 .nav-container li {
@@ -183,7 +183,6 @@ a {
   width: 100%;
   height: 3em;
   padding: 2em;
-  background-color: #366ccb;
   color: #DCE1DE; }
 
 h1 {

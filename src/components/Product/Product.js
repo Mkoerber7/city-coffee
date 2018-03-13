@@ -28,12 +28,9 @@ class Product extends Component {
         console.log('product on state: ', this.props.products);
         let singleProductView = this.props.products.length > 0
             let id = this.props.match.params.id;
-            console.log(this.props.products);
             let productDetails = this.props.products[`${id}`];
             let user_id = this.props.user.id;
-            console.log('This is productDetails.id: ',productDetails.id);
             let product_id = productDetails.id;
-            console.log('this is product_id: ', product_id);
         
         return(
             <div className="product-container">
