@@ -11,6 +11,8 @@ const Header = (props) => {
         <header className="App-header">
           <img className="App-logo" src={logo} alt="logo" />
 
+          <div className="company-title">STRICKLAND PROPANE</div>
+
           <ul className = 'nav-container'>
             <li><Link to="/">Home</Link></li>
             <li><Link to='/shop'>Shop</Link></li>

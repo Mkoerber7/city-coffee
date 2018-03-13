@@ -1,18 +1,26 @@
 .App-header {
     background-color: white;
-    height: 6em;
+    height: 5em;
     padding: 1em;
 }
 
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 5.5em;
+    height: 6em;
+    float: left;
     // margin-left: 1em;
 }
 
 @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+.company-title {
+    float: left;
+    margin-left: 2em;
+    margin-top: 1.3em;
+    color: #cc0b14;
 }
 
 .nav-container {
