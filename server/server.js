@@ -161,14 +161,16 @@ app.delete("/api/cart/:product_id", (req, res) => {
 });
 
 app.put("/api/cart/quantity", (req, res) => {
+    console.log(req.body)
     const db = req.app.get("db");
-    const userId = currentUser[0].id;
-    const { product_id, cart_quantity } = req.body;
+    const { product_id, cart_quantity, user_id } = req.body;
     db
-      .updateQuantity(userId, product_id, cart_quantity)
+      .updateQuantity([user_id, product_id, cart_quantity])
       .then( cart => {
+          console.log(cart);
           res.status(200).json(cart)})
       .catch(err => {
+          console.log(err)
           res.status(500).json(err);
       });    
 });

@@ -7,8 +7,7 @@ class Cart extends Component {
         super(props)
 
         this.state = {
-            newQuantity: 0,
-            newPrice: 0
+            newQuantity: 0
         };
 
     this.handleTotal = this.handleTotal.bind(this);    
@@ -26,12 +25,12 @@ class Cart extends Component {
         let cartTotal;
         if(cart !== undefined && cart.length !== 0) {
             cartTotal = cart.map((curr, index) => {
-                return (curr.price);
+                return Number.parseFloat(curr.price * curr.cart_quantity).toFixed(2);
             }).reduce(function(a,b){
                 return a+b;
             });
         }
-        return cartTotal;
+        return Number.parseFloat(cartTotal).toFixed(2);
     }
 
     handleDelete = (product) => {
@@ -43,14 +42,13 @@ class Cart extends Component {
     handleQuantity = (val) => {
         this.setState({
             newQuantity: val.target.value,
-            newPrice: this.props.products[this.props.match.params.id].price * parseInt(val.target.value)
         })
     }
 
-    updateCartQuantity = (user_id, product_id, cart_quantity) => {
-        const { user, updateQuantity, getCart } = this.props;
-        updateQuantity(user_id, product_id, cart_quantity);
-        getCart();
+    updateCartQuantity = (product_id, e) => {
+        const { user, updateQuantity } = this.props;
+        console.log(user.id, product_id, e.target.value)
+        updateQuantity(user.id, product_id, parseInt(e.target.value));
     }
 
 
@@ -63,8 +61,8 @@ class Cart extends Component {
                     <div className="cart-products" key = {index}>
                         <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
                         <h2>{curr.name}</h2>
-                        <div>{curr.price * curr.cart_quantity}</div>
-                        <input value={curr.cart_quantity} onChange = {(e) => this.handleQuantity(e)}></input>
+                        <div>${curr.price * curr.cart_quantity}</div>
+                        <input  value={curr.cart_quantity} onChange = {(e) => this.updateCartQuantity(curr.product_id, e)} ></input>
                         <button onClick = {() => {this.handleDelete(curr.product_id)}}>X</button>
                     </div>
                 )
@@ -74,7 +72,9 @@ class Cart extends Component {
             <div className="cart-container">
               <h1>Shopping Cart</h1>
               { cartView }
-              <div className = 'cart-total'><h3>Total: {this.handleTotal()}</h3></div>
+              <div className = 'cart-total'>
+              <button>Update</button>
+              <h3>Total: ${this.handleTotal()}</h3></div>
             </div>
         )
     }
