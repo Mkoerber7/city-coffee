@@ -124,11 +124,11 @@ app.get("/api/products", (req,res) => {
 
 app.post("/api/addtocart", (req, res) => {
     const db = req.app.get("db");
-    const { id } = req.user;
+    const userId = currentUser[0].id;
     const { product_id, cart_quantity } = req.body;
-    console.log(product_id, cart_quantity, id)
+    console.log(product_id, cart_quantity, userId)
     db
-      .addToCart([id, product_id, cart_quantity])
+      .addToCart([userId, product_id, cart_quantity])
       .then(cart => res.status(200).json(cart))
       .catch(err => {
           res.status(500).json(err);
@@ -150,9 +150,10 @@ app.get("/api/getCart", (req, res) => {
 app.delete("/api/cart/:product_id", (req, res) => {
     const db = req.app.get("db");
     const userId = currentUser[0].id;
-    const product = req.body.product;
+    console.log(userId, req.user, req.params.product_id)
+    const product = req.params.product_id;
     db
-      .removeOne(userId, product)
+      .removeOne([userId, product])
       .then( cart => {
           res.status(200).json(cart)
       }).catch(err => {

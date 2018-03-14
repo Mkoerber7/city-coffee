@@ -80,7 +80,7 @@ export function removeOne(product) {
     return {
         type: REMOVE_ONE,
         payload: axios
-            .delete(`/api/cart/${product}`, {data: {"product": product}})
+            .delete(`/api/cart/${product}`)
             .then(res => {
                 return res.data;
             }).catch(console.log)
@@ -137,6 +137,7 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: true});
 
         case`${GET_CART}_FULFILLED`:
+        console.log(action.payload)
             return Object.assign({}, state, { isLoading: false, cart: action.payload});
 
         case`${GET_CART}_REJECTED`:
@@ -146,7 +147,7 @@ export default function reducer (state = initialState, action) {
             return Object.assign({}, state, { isLoading: true});
 
         case `${REMOVE_ONE}_FULFILLED`:
-            return Object.assign({}, state, { isLoading: false, cart: action.payload});
+            return Object.assign({}, state, { isLoading: false});
 
         case `${REMOVE_ONE}_REJECTED`:
             return Object.assign({}, state, { isLoading: false, didErr: true, errMessage: action.payload});

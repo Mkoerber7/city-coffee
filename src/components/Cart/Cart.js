@@ -12,7 +12,6 @@ class Cart extends Component {
 
     this.handleTotal = this.handleTotal.bind(this);    
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleQuantity = this.handleQuantity.bind(this);
     this.updateCartQuantity = this.updateCartQuantity.bind(this);
     };
 
@@ -24,8 +23,9 @@ class Cart extends Component {
         const { cart } = this.props;
         let cartTotal;
         if(cart !== undefined && cart.length !== 0) {
+            console.log(cart);
             cartTotal = cart.map((curr, index) => {
-                return Number.parseFloat(curr.price * curr.cart_quantity).toFixed(2);
+                return (curr.price * curr.cart_quantity);
             }).reduce(function(a,b){
                 return a+b;
             });
@@ -39,21 +39,16 @@ class Cart extends Component {
         getCart();
     }
 
-    handleQuantity = (val) => {
-        this.setState({
-            newQuantity: val.target.value,
-        })
-    }
-
     updateCartQuantity = (product_id, e) => {
         const { user, updateQuantity } = this.props;
         console.log(user.id, product_id, e.target.value)
+        if(e.target.value === ""){e.target.value = 0}
         updateQuantity(user.id, product_id, parseInt(e.target.value));
     }
 
-
     
     render() {
+        console.log(this.props.cart)
         let cartView;
         if(this.props.cart.length !== undefined && this.props.cart.length !== 0) {
             cartView = this.props.cart.map((curr, index) => {
@@ -73,7 +68,6 @@ class Cart extends Component {
               <h1>Shopping Cart</h1>
               { cartView }
               <div className = 'cart-total'>
-              <button>Update</button>
               <h3>Total: ${this.handleTotal()}</h3></div>
             </div>
         )
