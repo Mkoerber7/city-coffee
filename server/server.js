@@ -12,6 +12,8 @@ const port = 3210;
 
 const app = express();
 
+app.use(express.static(`${__dirname}/../build`));
+
 
 // Database
 const {
@@ -86,7 +88,7 @@ passport.deserializeUser((user, done) => done(null, user));
 // Auth0 - 
 
 app.get("/auth", passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/",
+    successRedirect: "http://localhost:3210/#/",
     failureRedirect: "http://localhost:3210/auth"
   }));
 
@@ -187,6 +189,11 @@ app.put("/api/cart/quantity", (req, res) => {
 //         res.status(500).json(err);
 //     });
 // });
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 app.listen(port, () => {
     console.log(`I'm deadass listening on port: ${port}`);
