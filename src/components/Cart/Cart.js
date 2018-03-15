@@ -6,10 +6,6 @@ class Cart extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            newQuantity: 0
-        };
-
     this.handleTotal = this.handleTotal.bind(this);    
     this.handleDelete = this.handleDelete.bind(this);
     this.updateCartQuantity = this.updateCartQuantity.bind(this);
@@ -49,9 +45,9 @@ class Cart extends Component {
     
     render() {
         console.log(this.props.cart)
-        let cartView;
-        if(this.props.cart.length !== undefined && this.props.cart.length !== 0) {
-            cartView = this.props.cart.map((curr, index) => {
+        const { cart = [], isLoading } = this.props;
+        if(isLoading) return <div />; 
+            let cartView = cart.map((curr, index) => {
                 return(
                     <div className="cart-products" key = {index}>
                         <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
@@ -62,11 +58,11 @@ class Cart extends Component {
                     </div>
                 )
             })
-        }
+
         return (
             <div className="cart-container">
               <h1>Shopping Cart</h1>
-              { cartView }
+              { cartView || <div>Cart Is Empty</div> }
               <div className = 'cart-total'>
               <h3>Total: ${this.handleTotal()}</h3></div>
             </div>

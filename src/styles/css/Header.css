@@ -4,20 +4,18 @@
   border-bottom: 2px solid black; }
 
 .App-logo {
-  height: 6em;
-  float: left; }
+  height: 8.5em;
+  float: left;
+  position: absolute;
+  margin-top: -1.5em;
+  margin-left: -2em; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
 .company-title {
   float: left;
-  margin-left: 2em;
-  margin-top: 1.3em;
-  color: #cc0b14;
-  font-size: 1.5em; }
+  margin-top: 1.8em;
+  color: #73ace3;
+  font-size: 1.5em;
+  margin-left: 3em; }
 
 .nav-container {
   display: flex;
@@ -28,7 +26,7 @@
   margin-top: 3em; }
 
 .nav-container li {
-  padding-right: .5em;
+  padding-right: 2em;
   margin: 0 .5em; }
 
 a {
@@ -37,5 +35,41 @@ a {
   font-size: 20px;
   font-size: 1em;
   font-weight: 400; }
+
+.burger-btn {
+  background-color: transparent;
+  border: none;
+  float: right;
+  margin-top: 3em;
+  display: none; }
+
+.burger-img {
+  height: 4em;
+  width: 4em; }
+
+.burger-menu {
+  background-color: #ffffff;
+  float: right;
+  height: 10em;
+  width: 8em;
+  display: none;
+  margin-top: 5em;
+  margin-right: -5em; }
+
+.show-burger-menu {
+  display: block; }
+
+@media screen and (min-width: 891px) {
+  .burger-menu {
+    display: none; } }
+@media screen and (max-width: 890px) {
+  .burger-btn {
+    display: block; }
+
+  .nav-containter {
+    display: none; }
+
+  .nav-bar {
+    display: none; } }
 
 /*# sourceMappingURL=Header.css.map */
