@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../ducks/reducer';
+import swal from 'sweetalert2';
 
 
 class Product extends Component {
@@ -13,6 +14,7 @@ class Product extends Component {
         }
 
         this.handleQuantity = this.handleQuantity.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
 
 
@@ -23,6 +25,13 @@ class Product extends Component {
         });
     }
 
+    handleAdd = (user_id, product_id, quantity) => {
+        console.log("Hit")
+        this.props.addToCart(user_id, product_id, quantity);
+        console.log("Hit")
+        swal("Added To Cart!");
+    }
+
 
     render() {
         console.log('product on state: ', this.props.products);
@@ -31,6 +40,7 @@ class Product extends Component {
             let productDetails = this.props.products[`${id}`];
             let user_id = this.props.user.id;
             let product_id = productDetails.id;
+            let quant = this.state.quantity
         
         return(
             <div className="product-container">
@@ -38,9 +48,8 @@ class Product extends Component {
             <img className="big-img" src={require(`../assets/${productDetails.img_url}`)} alt="product images"/>
             {productDetails.price}
             <div>Enter Quantity<input value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
-            <button onClick = {() => this.props.addToCart(user_id, product_id, this.state.quantity)}>Add to Cart</button>
-            </div>
-            
+            <button onClick = {() => this.handleAdd(user_id, product_id, quant)}>Add to Cart</button>
+            </div>  
         )
         //The render method's return is below
         return { singleProductView };

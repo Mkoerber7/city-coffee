@@ -32,6 +32,6 @@ const Checkout = (props) => {
 return(<div className = 'checkout-container'><StripeCheckout name = {props.name} description ={props.description} amount = {fromDollarToCent(props.amount)} token = {onToken(props.amount, props.description)} currency = {CURRENCY} stripeKey = {REACT_APP_STRIPE_PUBLIC_KEY} /></div>);
 };
 
-const mapStatetoProps = state => state;
+const mapStateToProps = state => state;
 
-export default connect(mapStatetoProps)(Checkout);
+export default connect(mapStateToProps)(Checkout);

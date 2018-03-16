@@ -66,7 +66,7 @@ class Cart extends Component {
               { cartView || <div>Cart Is Empty</div> }
               <div className = 'cart-total'>
               <h3>Total: ${this.handleTotal()}</h3></div>
-              <Checkout name = {'Strickland Propane'} description = {'Have a mighty fine day'} amount = {this.handleTotal()}/>
+              <Checkout name = {'Strickland Propane'} description = {'Thanks for shopping with us'} amount = {this.handleTotal()}/>
             </div>
         )
     }

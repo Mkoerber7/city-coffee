@@ -9,7 +9,7 @@ const Auth0Strategy = require("passport-auth0");
 const path = require("path");
 const configureStripe = require("stripe");
 
-const port = 3210;
+const port = process.env.PORT || 3210;
 
 const app = express();
 
@@ -91,8 +91,8 @@ passport.deserializeUser((user, done) => done(null, user));
 // Auth0 - 
 
 app.get("/auth", passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3210/#/",
-    failureRedirect: "http://localhost:3210/auth"
+    successRedirect: "/#/",
+    failureRedirect: "/auth"
   }));
 
 // Login
