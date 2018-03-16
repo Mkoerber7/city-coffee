@@ -7,6 +7,7 @@ const passport = require("passport");
 const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
 const path = require("path");
+const configureStripe = require("stripe");
 
 const port = 3210;
 
@@ -21,7 +22,8 @@ const {
     DOMAIN,
     CLIENT_ID,
     CLIENT_SECRET,
-    SESSION_SECRET
+    SESSION_SECRET,
+    STRIPE_SECRET_KEY
 } = process.env
 
 massive(CONNECTION_STRING)
@@ -30,6 +32,7 @@ massive(CONNECTION_STRING)
 }).catch(console.log);
 
 
+const stripe = configureStripe(STRIPE_SECRET_KEY);
 // Middlewares
 
 app.use(json());
@@ -176,6 +179,21 @@ app.put("/api/cart/quantity", (req, res) => {
           console.log(err)
           res.status(500).json(err);
       });    
+});
+
+// STRIPE PAYMENT
+
+const postStripeCharge = res => (stripeErr, stripeRes) => {
+    if(stripeErr) {
+        res.status(500).json({error: stripeErr});
+
+    } else {
+        res.status(200).json({success: stripeRes});
+    }
+};
+
+app.post("/api/cart/checkout", (req, res) => {
+    stripe.charges.create(req.body, postStripeCharge(res));
 });
 
 // app.get("/api/test", (req, res) => {
