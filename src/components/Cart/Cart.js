@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCart, removeOne, updateQuantity } from "../../ducks/reducer";
-import Checkout from "../Checkout/Checkout" 
+import Checkout from "../Checkout/Checkout"
+import swal from 'sweetalert2';
 
 class Cart extends Component {
     constructor(props) {
@@ -32,9 +33,39 @@ class Cart extends Component {
 
     handleDelete = (product) => {
         const {user, removeOne, getCart} = this.props;
-        removeOne(product);
+        swal({
+            title: 'Are you sure?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false,
+            reverseButtons: true
+          }).then((result) => {
+            if (result.value) {
+              removeOne(product)
+              swal(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            } else if (
+              // Read more about handling dismissals
+              result.dismiss === swal.DismissReason.cancel
+            ) {
+              swal(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+              )
+            }
+          })
         getCart();
-    }
+    };
 
     updateCartQuantity = (product_id, e) => {
         const { user, updateQuantity } = this.props;

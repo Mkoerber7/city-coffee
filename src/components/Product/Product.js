@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../ducks/reducer';
 import swal from 'sweetalert2';
+import alertImg from '../assets/hankStrickland.jpg'
 
 
 class Product extends Component {
@@ -26,10 +27,17 @@ class Product extends Component {
     }
 
     handleAdd = (user_id, product_id, quantity) => {
-        console.log("Hit")
         this.props.addToCart(user_id, product_id, quantity);
-        console.log("Hit")
-        swal("Added To Cart!");
+        console.log(this.props.products)
+        swal({
+            title: 'Item Added To Cart',
+            text: "I'll Tell You What",
+            imageUrl: alertImg,
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            animation: false
+          })
     }
 
 
