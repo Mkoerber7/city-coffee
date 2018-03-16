@@ -59,8 +59,6 @@ class Cart extends Component {
             ) {
               swal(
                 'Cancelled',
-                'Your imaginary file is safe :)',
-                'error'
               )
             }
           })
