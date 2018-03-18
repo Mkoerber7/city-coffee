@@ -21,8 +21,10 @@ class Shop extends Component {
       } 
         return (
           <div className="shop-container">
-            <h1>Shop</h1>
-            {productList}
+            <h1 className="shop-title">Propane and Propane Accessories</h1>
+            <div className="container-container">
+              {productList}
+            </div>
           </div>
         )
     }

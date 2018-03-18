@@ -1,8 +1,28 @@
+.shop-container {
+    margin: 0 auto;
+    position: relative;
+    padding: 10px;
+    height: auto;
+    display: inline-block;
+}
+
+.container-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 15%;
+}
+
 .products-container {
     display: inline-block;
     height: auto;
     text-align: center;
     position: relative;
+    margin: 3em 2em;
+    flex-grow: 3;
 }
 
 .product-img {
@@ -10,9 +30,10 @@
     width: 200px;
 }
 
-.shop-container {
-    margin: 0 auto;
-    padding: 10px;
-    height: auto;
-    display: inline-block;
+.shop-title {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 3em;
+    margin-bottom: 1em;
 }
+

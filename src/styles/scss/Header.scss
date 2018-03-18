@@ -17,7 +17,7 @@
 .company-title {
     float: left;
     margin-top: 1.8em;
-    color: #73ace3;
+    color: $sp-darkBlue;
     font-size: 1.5em;
     margin-left: 3em;
 }
@@ -59,16 +59,18 @@ a {
 
 .burger-menu {
     background-color: #ffffff;
-    float: right;
+    position: absolute;
     height: 10em;
-    width: 8em;
+    width: 100%;
     display: none;
     margin-top: 5em;
-    margin-right: -5em;
+    z-index: 99;
+    margin-left: -1em;
 }
 
 .show-burger-menu {
     display: block;
+    float: right;
 }
 
 @media screen and (min-width: 891px) {
@@ -79,6 +81,10 @@ a {
     .burger-btn {display: block;}
     .nav-containter {display: none;}
     .nav-bar {display: none;}
+}
+
+@media screen and (max-width: 440px) {
+    .company-title {font-size: 1em; margin-left: 4.5em; margin-top: 2.7em;}
 }
 
 // @keyframes App-logo-spin {

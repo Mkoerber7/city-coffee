@@ -55,7 +55,7 @@ class Product extends Component {
             {productDetails.name}
             <img className="big-img" src={require(`../assets/${productDetails.img_url}`)} alt="product images"/>
             {productDetails.price}
-            <div>Enter Quantity<input value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
+            <div>Enter Quantity<input type="number" value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
             <button onClick = {() => this.handleAdd(user_id, product_id, quant)}>Add to Cart</button>
             </div>  
         )

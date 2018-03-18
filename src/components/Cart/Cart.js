@@ -80,10 +80,10 @@ class Cart extends Component {
             let cartView = cart.map((curr, index) => {
                 return(
                     <div className="cart-products" key = {index}>
-                        <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
+                        <img src={curr.img_url ? require(`../assets/${curr.img_url}`) : null} className = 'product-img' alt="product images"/>
                         <h2>{curr.name}</h2>
                         <div>${curr.price * curr.cart_quantity}</div>
-                        <input  value={curr.cart_quantity} onChange = {(e) => this.updateCartQuantity(curr.product_id, e)} ></input>
+                        <input  type = "number" value={curr.cart_quantity} onChange = {(e) => this.updateCartQuantity(curr.product_id, e)} ></input>
                         <button onClick = {() => {this.handleDelete(curr.product_id)}}>X</button>
                     </div>
                 )
