@@ -47,7 +47,7 @@ class Cart extends Component {
             reverseButtons: true
           }).then((result) => {
             if (result.value) {
-              removeOne(product)
+              removeOne(product);
               swal(
                 'Deleted!',
                 'Your file has been deleted.',
@@ -80,22 +80,27 @@ class Cart extends Component {
             let cartView = cart.map((curr, index) => {
                 return(
                     <div className="cart-products" key = {index}>
-                        <img src={curr.img_url ? require(`../assets/${curr.img_url}`) : null} className = 'product-img' alt="product images"/>
-                        <h2>{curr.name}</h2>
-                        <div>${curr.price * curr.cart_quantity}</div>
-                        <input  type = "number" value={curr.cart_quantity} onChange = {(e) => this.updateCartQuantity(curr.product_id, e)} ></input>
-                        <button onClick = {() => {this.handleDelete(curr.product_id)}}>X</button>
+                      <div className="name-pic">
+                        <h2 className="cart-name">{curr.name}</h2>
+                        <img id="cart-img" src={curr.img_url ? require(`../assets/${curr.img_url}`) : null} className = 'product-img' alt="product images"/>
+                      </div>
+                      <div className="cart-deets">
+                        <div className="curr-price">${curr.price * curr.cart_quantity}</div>
+                        Quantity: <input  className="qty-box" type = "number" value={curr.cart_quantity} onChange = {(e) => this.updateCartQuantity(curr.product_id, e)} ></input>
+                        <button className="delete-ghost"onClick = {() => {this.handleDelete(curr.product_id)}}>X</button>
+                      </div>
                     </div>
                 )
             })
 
         return (
             <div className="cart-container">
-              <h1>Shopping Cart</h1>
+              <h1 className="cart-title" >Shopping Cart</h1>
               { cartView || <div>Cart Is Empty</div> }
-              <div className = 'cart-total'>
-              <h3>Total: ${this.handleTotal()}</h3></div>
+              <div className="total-checkout">
+              <h3 className="cart-total">Total: ${this.handleTotal()}</h3>
               <Checkout name = {'Strickland Propane'} description = {'Thanks for shopping with us'} amount = {this.handleTotal()}/>
+              </div>
             </div>
         )
     }

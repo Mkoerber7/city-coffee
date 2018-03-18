@@ -13,8 +13,8 @@ class Shop extends Component {
       if(this.props.products.length !== undefined && this.props.products.length !== 0) {
         productList = this.props.products.map((curr, index) => {
         return (<Link to = {`/product/${index}`} key = {index}> <div className='products-container' key = {index}>
-        <h2>{curr.name}</h2>
-        <img className = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
+        <h2 className="prod-names">{curr.name}</h2>
+        <img id = 'product-img' src={require(`../assets/${curr.img_url}`)} alt="product images"/>
         <div>{curr.price}</div>
         </div></Link>)
         })

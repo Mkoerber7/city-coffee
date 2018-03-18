@@ -7,6 +7,98 @@
     display: inline-block;
 }
 
+.cart-title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+.cart-products {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+    border-bottom: .5px dashed $sp-black;
+}
+
+.name-pic {
+    font-size: 1.5em;
+    text-align: center;
+    width: 50%;
+    float: left;
+    clear: both;
+}
+
+.cart-name {
+    width: 150px;
+    float: left;
+    margin-bottom: 1.7em;
+    font-size: .7em;
+}
+
+
+#cart-img {
+    clear: both;
+    float: left;
+    width: 5em;
+    height: 5em;
+    margin: 0 1em;
+
+}
+
+.cart-deets {
+    width: 50%;
+    float: right;
+    clear: both;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: .5em;
+}
+
+.curr-price {
+    margin-right: 5em;
+    font-size: 1.2em;
+}
+
+.delete-ghost {
+    width: 4em;
+    height: 1.8em;
+    margin-left: 2em;
+    font-weight: 700;
+    color: $sp-black;
+    background-color: transparent;
+    border: 1px solid $sp-black;
+    border-radius: 20px;
+    transition: background-color 0.2s ease-out;
+}
+
+.delete-ghost:hover,
+.delete-ghost:active {
+    background-color: $sp-red;
+    transition: background-color 0.4s ease-in;
+}
+
+.total-checkout {
+    width: 50%;
+    float: right;
+    margin-top: 2em;
+    padding: 2em;
+}
+
 .cart-total {
     float: right;
+    font-size: 1.5em;
+    border-bottom: .5px solid $sp-black;
+    
 }
+
+.checkout-container {
+    float: right;
+    clear: both;
+    margin-top: .5em;
+}
+
+@media screen and (max-height: 630px) {
+    .cart-products{display: flex; flex-direction: column;}
+}
+
+

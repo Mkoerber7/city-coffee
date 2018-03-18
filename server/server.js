@@ -11,7 +11,7 @@ const configureStripe = require("stripe");
 
 const port = process.env.PORT || 3210;
 
-const app = express();
+const app = express(); 
 
 app.use(express.static(`${__dirname}/../build`));
 

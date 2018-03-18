@@ -1,6 +1,10 @@
 .big-img {
-    height: 20em;
-    width: 20em;
+    height: 30em;
+    width: 30em;
+    float: left;
+    // margin-left: 6em;
+    // margin-top: .5em;
+    margin: .5em  6em;
 }
 
 .product-container {
@@ -11,4 +15,46 @@
     height: auto;
     width: 100%;
     display: inline-block;
+}
+
+.prod-name {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: 45px;
+    margin-top: 2em;
+    font-size: 2em;
+    border-bottom: 1px solid $sp-black;
+}
+
+.prod-price {
+    font-size: 1.3em;
+    margin: 4em auto;
+}
+
+.qty-box {
+    width: 4em;
+}
+
+.add-btn {
+    margin-top: 8em;
+    width: 13em;
+    height: 5em;
+    font-weight: 500;
+    color: $sp-black;
+    background-color: transparent;
+    border: 1px solid $sp-black;
+    border-radius: 20px;
+    transition: background-color 0.2s ease-out;
+}
+
+.add-btn:hover,
+.add-btn:active {
+    background-color: $sp-lightBlue;
+    transition: background-color 0.4s ease-in;
+}
+
+@media screen and(max-width: 630px) {
+    .big-img{margin: .5em 2em; height: 20em; width: 20em;}
+    .prod-name{font-size: 1.5em; border-bottom: none;} 
 }

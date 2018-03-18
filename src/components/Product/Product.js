@@ -52,11 +52,11 @@ class Product extends Component {
         
         return(
             <div className="product-container">
-            {productDetails.name}
-            <img className="big-img" src={require(`../assets/${productDetails.img_url}`)} alt="product images"/>
-            {productDetails.price}
-            <div>Enter Quantity<input type="number" value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
-            <button onClick = {() => this.handleAdd(user_id, product_id, quant)}>Add to Cart</button>
+              <div className="prod-name">{productDetails.name}</div>
+              <img className="big-img" src={require(`../assets/${productDetails.img_url}`)} alt="product images"/>
+              <div className="prod-price">${productDetails.price}</div>
+              <div>Quantity: <input className="qty-box" type="number" value={this.state.quantity} onChange = {(e) => this.handleQuantity(e)}></input></div>
+              <button className="add-btn" onClick = {() => this.handleAdd(user_id, product_id, quant)}>Add to Cart</button>
             </div>  
         )
         //The render method's return is below

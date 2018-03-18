@@ -25,9 +25,20 @@
     flex-grow: 3;
 }
 
-.product-img {
+.prod-names {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#product-img {
     height: 200px;
     width: 200px;
+    margin-bottom: 1em;
+    transition: transform .05s;
+}
+
+#product-img:hover {
+    transform: scale(1.25);
 }
 
 .shop-title {
