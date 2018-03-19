@@ -422,7 +422,8 @@ a {
   background-color: transparent;
   border: 1px solid #050505;
   border-radius: 20px;
-  transition: background-color 0.2s ease-out; }
+  transition: background-color 0.2s ease-out;
+  cursor: pointer; }
 
 .add-btn:hover,
 .add-btn:active {
@@ -499,7 +500,8 @@ a {
   background-color: transparent;
   border: 1px solid #050505;
   border-radius: 20px;
-  transition: background-color 0.2s ease-out; }
+  transition: background-color 0.2s ease-out;
+  cursor: pointer; }
 
 .delete-ghost:hover,
 .delete-ghost:active {
@@ -541,6 +543,11 @@ a {
 
 .info {
   font-size: 2em;
-  margin-top: 5em; }
+  margin-top: 2.5em; }
+
+.sketch {
+  height: 20em;
+  width: auto;
+  margin-top: 3em; }
 
 /*# sourceMappingURL=index.css.map */
