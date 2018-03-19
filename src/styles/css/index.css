@@ -192,23 +192,28 @@ a {
   width: 4em; }
 
 .burger-menu {
-  background-color: #ffffff;
+  background-color: transparent;
   position: absolute;
   height: 10em;
   width: 100%;
   display: none;
   margin-top: 5em;
   z-index: 99;
-  margin-left: -1em; }
+  text-align: right;
+  margin-left: -2em; }
+
+.burger-menu li {
+  margin-top: 1em;
+  cursor: pointer; }
 
 .show-burger-menu {
   display: block;
   float: right; }
 
-@media screen and (min-width: 891px) {
+@media screen and (min-width: 920px) {
   .burger-menu {
     display: none; } }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 919px) {
   .burger-btn {
     display: block; }
 
@@ -229,7 +234,7 @@ a {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 25vh;
+  height: 17vh;
   padding: 1.5em;
   color: #73ace3;
   font-family: "Old Standard TT", serif;
@@ -259,7 +264,7 @@ a {
 .join-us {
   font-size: 3em;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
   color: #366ccb;
   animation-name: moveInLeft;
   animation-duration: 1s; }
@@ -267,7 +272,7 @@ a {
 .grill-title {
   font-size: 5em;
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: .5em;
   color: #cc0b15c7;
   animation-name: fadeIn;
   animation-duration: 5s;
@@ -276,7 +281,7 @@ a {
 .deals {
   font-size: 3em;
   text-align: center;
-  margin-top: 2em;
+  margin-top: .8em;
   color: #366ccb;
   animation-name: moveInRight;
   animation-duration: 5s; }
@@ -326,13 +331,16 @@ a {
     font-size: 3em; } }
 @media screen and (max-width: 563px) {
   .grill-title {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    margin-top: 2em; }
 
   .join-us {
-    font-size: .75em; }
+    font-size: .75em;
+    margin-top: 2em; }
 
   .deals {
-    font-size: .75em; }
+    font-size: .75em;
+    margin-top: 4em; }
 
   .tank-container {
     display: flex; }
@@ -341,10 +349,16 @@ a {
     height: 15em;
     align-content: center;
     display: inline-block;
-    margin: 0 auto; }
+    margin: 5em auto; }
 
   .tank2 {
     display: none; } }
+@media screen and (min-height: 770px) {
+  .grill-title {
+    margin-top: 1.5em; }
+
+  .deals {
+    margin-top: 1.8em; } }
 .shop-container {
   margin: 0 auto;
   position: relative;

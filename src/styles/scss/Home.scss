@@ -12,8 +12,7 @@
 .join-us {
     font-size: 3em;
     text-align: center;
-    margin-top: 2em;
-    // margin-top: 1em;
+    margin-top: 1em;
     color: $sp-darkBlue;
 
     animation-name: moveInLeft;
@@ -23,8 +22,7 @@
 .grill-title {
     font-size: 5em;
     text-align: center;
-    margin-top: 1.5em;
-    // margin-top: .5em;
+    margin-top: .5em;
     color: $sp-red;
 
     animation-name: fadeIn;
@@ -35,8 +33,7 @@
 .deals {
     font-size: 3em;
     text-align: center;
-    // margin-top: .8em;
-    margin-top: 2em;
+    margin-top: .8em;
     color: $sp-darkBlue;
 
     animation-name: moveInRight;
@@ -111,10 +108,15 @@
 }
 
 @media screen and (max-width: 563px) {
-    .grill-title{font-size: 1.5em;}
-    .join-us{font-size: .75em;}
-    .deals{font-size: .75em;}
+    .grill-title{font-size: 1.5em; margin-top: 2em;}
+    .join-us{font-size: .75em; margin-top: 2em;}
+    .deals{font-size: .75em; margin-top: 4em;}
     .tank-container{display: flex;}
-    .tank1{height: 15em; align-content: center; display: inline-block; margin: 0 auto;}
+    .tank1{height: 15em; align-content: center; display: inline-block; margin: 5em auto;}
     .tank2{display: none}
+}
+
+@media screen and (min-height: 770px) {
+    .grill-title{margin-top: 1.5em;}
+    .deals{margin-top: 1.8em;}
 }

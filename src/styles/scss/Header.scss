@@ -60,14 +60,20 @@ a {
 }
 
 .burger-menu {
-    background-color: #ffffff;
+    background-color: transparent;
     position: absolute;
     height: 10em;
     width: 100%;
     display: none;
     margin-top: 5em;
     z-index: 99;
-    margin-left: -1em;
+    text-align: right;
+    margin-left: -2em;
+}
+
+.burger-menu li{
+    margin-top: 1em;
+    cursor: pointer;
 }
 
 .show-burger-menu {
@@ -75,11 +81,11 @@ a {
     float: right;
 }
 
-@media screen and (min-width: 891px) {
+@media screen and (min-width: 920px) {
     .burger-menu {display: none;}
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 919px) {
     .burger-btn {display: block;}
     .nav-containter {display: none;}
     .nav-bar {display: none;}
