@@ -19,7 +19,7 @@ const errorPayment = (data) => {
     alert('Payment Error');
 };
 
-const onToken = (amount, description) => token => axios.post(REACT_APP_PAYMENT_SERVER_URL_TEST, 
+const onToken = (amount, description) => token => axios.post("/api/cart/checkout", 
     {
     description,
     source: token.id,
