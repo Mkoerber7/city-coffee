@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$sp-body".
-        on line 18 of src/styles/scss/Product.scss
+        on line 16 of src/styles/scss/Product.scss
 
-13:     padding: 10px;
-14:     min-height: 30em;
-15:     height: auto;
-16:     width: 100%;
-17:     display: inline-block;
-18:     font-family: $sp-body;
-19: }
-20: 
-21: .prod-name {
-22:     display: block;
-23:     margin: 0 auto;
+11:     padding: 10px;
+12:     min-height: 30em;
+13:     height: auto;
+14:     width: 100%;
+15:     display: inline-block;
+16:     font-family: $sp-body;
+17: }
+18: 
+19: .prod-name {
+20:     display: block;
+21:     margin: 0 auto;
 
 Backtrace:
-src/styles/scss/Product.scss:18
+src/styles/scss/Product.scss:16
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -69,4 +69,4 @@ src/styles/scss/Product.scss:18
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-body\".\A         on line 18 of src/styles/scss/Product.scss\A \A 13:     padding: 10px;\A 14:     min-height: 30em;\A 15:     height: auto;\A 16:     width: 100%;\A 17:     display: inline-block;\A 18:     font-family: $sp-body;\A 19: }\A 20: \A 21: .prod-name {\A 22:     display: block;\A 23:     margin: 0 auto;"; }
+  content: "Error: Undefined variable: \"$sp-body\".\A         on line 16 of src/styles/scss/Product.scss\A \A 11:     padding: 10px;\A 12:     min-height: 30em;\A 13:     height: auto;\A 14:     width: 100%;\A 15:     display: inline-block;\A 16:     font-family: $sp-body;\A 17: }\A 18: \A 19: .prod-name {\A 20:     display: block;\A 21:     margin: 0 auto;"; }

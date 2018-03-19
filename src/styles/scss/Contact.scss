@@ -1,9 +1,19 @@
 .contact-container {
     margin: 0 auto;
     padding: 10px;
-    min-height: 30em;
+    min-height: 28em;
     height: auto;
     width: 100%;
     display: inline-block;
     font-family: $sp-body;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 3em;
+}
+
+.info {
+    font-size: 2em;
+    margin-top: 5em;
 }

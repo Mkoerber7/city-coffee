@@ -2,9 +2,7 @@
     height: 30em;
     width: 30em;
     float: left;
-    // margin-left: 6em;
-    // margin-top: .5em;
-    margin: .5em  6em;
+    margin: .5em  7em;
 }
 
 .product-container {
@@ -23,14 +21,14 @@
     margin: 0 auto;
     width: 400px;
     height: 45px;
-    margin-top: 2em;
+    margin: 1.5em auto;
     font-size: 2em;
     border-bottom: 1px solid $sp-black;
 }
 
 .prod-price {
     font-size: 1.3em;
-    margin: 4em auto;
+    margin: 6em auto;
 }
 
 .qty-box {

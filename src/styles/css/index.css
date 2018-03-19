@@ -385,7 +385,7 @@ a {
   height: 30em;
   width: 30em;
   float: left;
-  margin: .5em  6em; }
+  margin: .5em  7em; }
 
 .product-container {
   text-align: center;
@@ -402,13 +402,13 @@ a {
   margin: 0 auto;
   width: 400px;
   height: 45px;
-  margin-top: 2em;
+  margin: 1.5em auto;
   font-size: 2em;
   border-bottom: 1px solid #050505; }
 
 .prod-price {
   font-size: 1.3em;
-  margin: 4em auto; }
+  margin: 6em auto; }
 
 .qty-box {
   width: 4em; }
@@ -441,7 +441,7 @@ a {
 .cart-container {
   margin: 0 auto;
   padding: 10px;
-  min-height: 31em;
+  min-height: 28em;
   height: auto;
   width: 100%;
   display: inline-block;
@@ -529,10 +529,18 @@ a {
 .contact-container {
   margin: 0 auto;
   padding: 10px;
-  min-height: 30em;
+  min-height: 28em;
   height: auto;
   width: 100%;
   display: inline-block;
-  font-family: "Questrial", sans-serif; }
+  font-family: "Questrial", sans-serif;
+  text-align: center; }
+
+.contact-title {
+  font-size: 3em; }
+
+.info {
+  font-size: 2em;
+  margin-top: 5em; }
 
 /*# sourceMappingURL=index.css.map */
