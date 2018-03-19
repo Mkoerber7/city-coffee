@@ -3,7 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 
-const {REACT_APP_PAYMENT_SERVER_URL_TEST, REACT_APP_STRIPE_PUBLIC_KEY } = process.env;
+const { REACT_APP_PAYMENT_SERVER_URL_TEST } = process.env;
 
 const CURRENCY = 'USD';
 
@@ -29,7 +29,7 @@ const onToken = (amount, description) => token => axios.post(REACT_APP_PAYMENT_S
 
 //actual Checkout Component
 const Checkout = (props) => {    
-return(<div className = 'checkout-container'><StripeCheckout name = {props.name} description ={props.description} amount = {fromDollarToCent(props.amount)} token = {onToken(props.amount, props.description)} currency = {CURRENCY} stripeKey = {REACT_APP_STRIPE_PUBLIC_KEY} /></div>);
+return(<div className = 'checkout-container'><StripeCheckout name = {props.name} description ={props.description} amount = {fromDollarToCent(props.amount)} token = {onToken(props.amount, props.description)} currency = {CURRENCY} stripeKey = {"pk_test_neF6OrWmotX40f1jQUwvTvdz"} /></div>);
 };
 
 const mapStateToProps = state => state;

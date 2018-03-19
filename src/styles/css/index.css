@@ -221,6 +221,11 @@ a {
     font-size: 1em;
     margin-left: 4.5em;
     margin-top: 2.7em; } }
+@media screen and (max-width: 357px) {
+  .company-title {
+    font-size: .85em;
+    margin-left: 5em;
+    margin-top: 3.5em; } }
 .app-footer {
   width: 100%;
   height: auto;
@@ -239,6 +244,9 @@ a {
 @media screen and (max-width: 671px) {
   .disclaimer {
     font-size: .5em; } }
+@media screen and (max-width: 397px) {
+  .disclaimer {
+    font-size: .4em; } }
 .home-container {
   margin: 0 auto;
   padding: 10px;
