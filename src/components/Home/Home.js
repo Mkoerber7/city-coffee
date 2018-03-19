@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getUser } from "../../ducks/reducer"
+import tank from "../assets/propaneTanks.png"
 
 class Home extends Component {
     componentDidMount() {
@@ -10,7 +11,13 @@ class Home extends Component {
     render() {
         return (
             <div className="home-container">
-             <h1>GRILLSTRAVIGANZA!!!</h1>
+             <p className="join-us">Join Us This Weekend For...</p>
+             <p className="grill-title">GRILLSTRAVIGANZA!!!</p>
+             <p className="deals">25% - 50% Off All Products</p>
+             <div className="tank-container">
+               <img className="tank1" src={tank} alt="tanks"/>
+               <img className="tank2" src={tank} alt="tanks"/>
+             </div>
             </div>
         )
     }

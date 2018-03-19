@@ -1,44 +1,72 @@
-.shop-container {
-  margin: 0 auto;
-  position: relative;
-  padding: 10px;
-  height: auto;
-  display: inline-block; }
+/*
+Error: Undefined variable: "$sp-body".
+        on line 7 of src/styles/scss/Shop.scss
 
-.container-container {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 15%; }
+2:     margin: 0 auto;
+3:     position: relative;
+4:     padding: 10px;
+5:     height: auto;
+6:     display: inline-block;
+7:     font-family: $sp-body;
+8: }
+9: 
+10: .container-container {
+11:     display: flex;
+12:     position: relative;
 
-.products-container {
-  display: inline-block;
-  height: auto;
-  text-align: center;
-  position: relative;
-  margin: 3em 2em;
-  flex-grow: 3; }
-
-.prod-names {
-  font-size: 1.5em;
-  margin-bottom: 1em; }
-
-#product-img {
-  height: 200px;
-  width: 200px;
-  margin-bottom: 1em;
-  transition: transform .05s; }
-
-#product-img:hover {
-  transform: scale(1.25); }
-
-.shop-title {
-  text-align: center;
-  margin-top: 1em;
-  font-size: 3em;
-  margin-bottom: 1em; }
-
-/*# sourceMappingURL=Shop.css.map */
+Backtrace:
+src/styles/scss/Shop.scss:7
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$sp-body\".\A         on line 7 of src/styles/scss/Shop.scss\A \A 2:     margin: 0 auto;\A 3:     position: relative;\A 4:     padding: 10px;\A 5:     height: auto;\A 6:     display: inline-block;\A 7:     font-family: $sp-body;\A 8: }\A 9: \A 10: .container-container {\A 11:     display: flex;\A 12:     position: relative;"; }

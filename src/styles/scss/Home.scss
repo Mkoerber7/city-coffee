@@ -1,12 +1,117 @@
-h1 {
-    font-size: 24px;
-}
 
 .home-container {
     margin: 0 auto;
     padding: 10px;
-    min-height: 30em;
+    min-height: 28em;
     height: auto;
     width: 100%;
-    display: inline-block;
+    display: block;
+    font-family: $sp-titles;
+}
+
+.join-us {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+    color: $sp-darkBlue;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+}
+
+.grill-title {
+    font-size: 5em;
+    text-align: center;
+    margin-top: .5em;
+    color: $sp-red;
+
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+}
+
+.deals {
+    font-size: 3em;
+    text-align: center;
+    margin-top: .8em;
+    color: $sp-darkBlue;
+
+    animation-name: moveInRight;
+    animation-duration: 5s;
+}
+
+.tank-container {
+    animation: fadeIn;
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+}
+.tank1 {
+    height: 10em;
+    width: auto;
+    margin-top: .5em;
+    float: left;
+
+}
+
+.tank2 {
+    height: 10em;
+    width: auto;
+    margin-top: .5em;
+    float: right;
+}
+
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20em);
+    }
+
+    50% {
+        opacity: .2;
+    }
+
+    75% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .grill-title{font-size: 3em;}
+}
+
+@media screen and (max-width: 563px) {
+    .grill-title{font-size: 1.5em;}
+    .join-us{font-size: .75em;}
+    .deals{font-size: .75em;}
+    .tank-container{display: flex;}
+    .tank1{height: 15em; align-content: center; display: inline-block; margin: 0 auto;}
+    .tank2{display: none}
 }

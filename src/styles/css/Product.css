@@ -1,26 +1,22 @@
 /*
-Error: Undefined variable: "$sp-black".
-        on line 27 of src/styles/scss/Product.scss
+Error: Undefined variable: "$sp-body".
+        on line 18 of src/styles/scss/Product.scss
 
-22:     margin: 0 auto;
-23:     width: 400px;
-24:     height: 45px;
-25:     margin-top: 2em;
-26:     font-size: 2em;
-27:     border-bottom: 1px solid $sp-black;
-28: }
-29: 
-30: .prod-price {
-31:     font-size: 1.3em;
-32:     margin: 4em auto;
+13:     padding: 10px;
+14:     min-height: 30em;
+15:     height: auto;
+16:     width: 100%;
+17:     display: inline-block;
+18:     font-family: $sp-body;
+19: }
+20: 
+21: .prod-name {
+22:     display: block;
+23:     margin: 0 auto;
 
 Backtrace:
-src/styles/scss/Product.scss:27
+src/styles/scss/Product.scss:18
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/list_literal.rb:75:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/base.rb:36:in `visit'
@@ -73,4 +69,4 @@ src/styles/scss/Product.scss:27
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-black\".\A         on line 27 of src/styles/scss/Product.scss\A \A 22:     margin: 0 auto;\A 23:     width: 400px;\A 24:     height: 45px;\A 25:     margin-top: 2em;\A 26:     font-size: 2em;\A 27:     border-bottom: 1px solid $sp-black;\A 28: }\A 29: \A 30: .prod-price {\A 31:     font-size: 1.3em;\A 32:     margin: 4em auto;"; }
+  content: "Error: Undefined variable: \"$sp-body\".\A         on line 18 of src/styles/scss/Product.scss\A \A 13:     padding: 10px;\A 14:     min-height: 30em;\A 15:     height: auto;\A 16:     width: 100%;\A 17:     display: inline-block;\A 18:     font-family: $sp-body;\A 19: }\A 20: \A 21: .prod-name {\A 22:     display: block;\A 23:     margin: 0 auto;"; }

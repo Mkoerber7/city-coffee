@@ -37,7 +37,7 @@ const stripe = configureStripe(STRIPE_SECRET_KEY);
 
 app.use(json());
 app.use(cors());
-// app.use(express.static(`${__dirname}/../build`));
+
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,

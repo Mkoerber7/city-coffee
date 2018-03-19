@@ -1,21 +1,21 @@
 /*
-Error: Undefined variable: "$sp-darkBlue".
-        on line 20 of src/styles/scss/Header.scss
+Error: Undefined variable: "$sp-titles".
+        on line 6 of src/styles/scss/Header.scss
 
-15: }
-16: 
-17: .company-title {
-18:     float: left;
-19:     margin-top: 1.8em;
-20:     color: $sp-darkBlue;
-21:     font-size: 1.5em;
-22:     margin-left: 3em;
-23: }
-24: 
-25: .nav-container {
+1: .App-header {
+2:     // background-color: white;
+3:     height: 6em;
+4:     padding: 1em;
+5:     border-bottom: 2px solid black;
+6:     font-family: $sp-titles;
+7: }
+8: 
+9: .App-logo {
+10:     // animation: App-logo-spin infinite 20s linear;
+11:     height: 8.5em;
 
 Backtrace:
-src/styles/scss/Header.scss:20
+src/styles/scss/Header.scss:6
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -69,4 +69,4 @@ src/styles/scss/Header.scss:20
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-darkBlue\".\A         on line 20 of src/styles/scss/Header.scss\A \A 15: }\A 16: \A 17: .company-title {\A 18:     float: left;\A 19:     margin-top: 1.8em;\A 20:     color: $sp-darkBlue;\A 21:     font-size: 1.5em;\A 22:     margin-left: 3em;\A 23: }\A 24: \A 25: .nav-container {"; }
+  content: "Error: Undefined variable: \"$sp-titles\".\A         on line 6 of src/styles/scss/Header.scss\A \A 1: .App-header {\A 2:     // background-color: white;\A 3:     height: 6em;\A 4:     padding: 1em;\A 5:     border-bottom: 2px solid black;\A 6:     font-family: $sp-titles;\A 7: }\A 8: \A 9: .App-logo {\A 10:     // animation: App-logo-spin infinite 20s linear;\A 11:     height: 8.5em;"; }
