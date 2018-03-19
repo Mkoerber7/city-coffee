@@ -3,8 +3,8 @@ Error: Undefined variable: "$sp-titles".
         on line 9 of src/styles/scss/Home.scss
 
 4:     padding: 10px;
-5:     min-height: 28em;
-6:     height: auto;
+5:     // min-height: 28em;
+6:     height: 75vh;
 7:     width: 100%;
 8:     display: block;
 9:     font-family: $sp-titles;
@@ -69,4 +69,4 @@ src/styles/scss/Home.scss:9
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-titles\".\A         on line 9 of src/styles/scss/Home.scss\A \A 4:     padding: 10px;\A 5:     min-height: 28em;\A 6:     height: auto;\A 7:     width: 100%;\A 8:     display: block;\A 9:     font-family: $sp-titles;\A 10: }\A 11: \A 12: .join-us {\A 13:     font-size: 3em;\A 14:     text-align: center;"; }
+  content: "Error: Undefined variable: \"$sp-titles\".\A         on line 9 of src/styles/scss/Home.scss\A \A 4:     padding: 10px;\A 5:     // min-height: 28em;\A 6:     height: 75vh;\A 7:     width: 100%;\A 8:     display: block;\A 9:     font-family: $sp-titles;\A 10: }\A 11: \A 12: .join-us {\A 13:     font-size: 3em;\A 14:     text-align: center;"; }

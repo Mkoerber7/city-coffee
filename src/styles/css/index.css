@@ -137,7 +137,8 @@ body {
   min-height: 100%;
   position: relative;
   overflow: hidden;
-  display: block; }
+  display: block;
+  padding-bottom: 25vh; }
 
 .App-header {
   height: 6em;
@@ -225,8 +226,10 @@ a {
   .company-title {
     display: none; } }
 .app-footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: auto;
+  height: 25vh;
   padding: 1.5em;
   color: #73ace3;
   font-family: "Old Standard TT", serif;
@@ -248,8 +251,7 @@ a {
 .home-container {
   margin: 0 auto;
   padding: 10px;
-  min-height: 28em;
-  height: auto;
+  height: 75vh;
   width: 100%;
   display: block;
   font-family: "Old Standard TT", serif; }
@@ -257,7 +259,7 @@ a {
 .join-us {
   font-size: 3em;
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em;
   color: #366ccb;
   animation-name: moveInLeft;
   animation-duration: 1s; }
@@ -265,7 +267,7 @@ a {
 .grill-title {
   font-size: 5em;
   text-align: center;
-  margin-top: .5em;
+  margin-top: 1.5em;
   color: #cc0b15c7;
   animation-name: fadeIn;
   animation-duration: 5s;
@@ -274,7 +276,7 @@ a {
 .deals {
   font-size: 3em;
   text-align: center;
-  margin-top: .8em;
+  margin-top: 2em;
   color: #366ccb;
   animation-name: moveInRight;
   animation-duration: 5s; }
@@ -448,8 +450,8 @@ a {
 .cart-container {
   margin: 0 auto;
   padding: 10px;
-  min-height: 28em;
-  height: auto;
+  min-height: 29em;
+  height: 75vh;
   width: 100%;
   display: inline-block;
   font-family: "Questrial", sans-serif; }
@@ -538,7 +540,7 @@ a {
   margin: 0 auto;
   padding: 10px;
   min-height: 28em;
-  height: auto;
+  height: 75vh;
   width: 100%;
   display: inline-block;
   font-family: "Questrial", sans-serif;

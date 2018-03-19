@@ -4,7 +4,7 @@ Error: Undefined variable: "$sp-body".
 
 3:     padding: 10px;
 4:     min-height: 28em;
-5:     height: auto;
+5:     height: 75vh;
 6:     width: 100%;
 7:     display: inline-block;
 8:     font-family: $sp-body;
@@ -69,4 +69,4 @@ src/styles/scss/Contact.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-body\".\A         on line 8 of src/styles/scss/Contact.scss\A \A 3:     padding: 10px;\A 4:     min-height: 28em;\A 5:     height: auto;\A 6:     width: 100%;\A 7:     display: inline-block;\A 8:     font-family: $sp-body;\A 9:     text-align: center;\A 10: }\A 11: \A 12: .contact-title {\A 13:     font-size: 3em;"; }
+  content: "Error: Undefined variable: \"$sp-body\".\A         on line 8 of src/styles/scss/Contact.scss\A \A 3:     padding: 10px;\A 4:     min-height: 28em;\A 5:     height: 75vh;\A 6:     width: 100%;\A 7:     display: inline-block;\A 8:     font-family: $sp-body;\A 9:     text-align: center;\A 10: }\A 11: \A 12: .contact-title {\A 13:     font-size: 3em;"; }

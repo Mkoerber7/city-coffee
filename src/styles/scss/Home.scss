@@ -2,8 +2,8 @@
 .home-container {
     margin: 0 auto;
     padding: 10px;
-    min-height: 28em;
-    height: auto;
+    // min-height: 28em;
+    height: 75vh;
     width: 100%;
     display: block;
     font-family: $sp-titles;
@@ -12,7 +12,8 @@
 .join-us {
     font-size: 3em;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
+    // margin-top: 1em;
     color: $sp-darkBlue;
 
     animation-name: moveInLeft;
@@ -22,7 +23,8 @@
 .grill-title {
     font-size: 5em;
     text-align: center;
-    margin-top: .5em;
+    margin-top: 1.5em;
+    // margin-top: .5em;
     color: $sp-red;
 
     animation-name: fadeIn;
@@ -33,7 +35,8 @@
 .deals {
     font-size: 3em;
     text-align: center;
-    margin-top: .8em;
+    // margin-top: .8em;
+    margin-top: 2em;
     color: $sp-darkBlue;
 
     animation-name: moveInRight;

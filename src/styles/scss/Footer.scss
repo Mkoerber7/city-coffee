@@ -1,6 +1,8 @@
 .app-footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: auto;
+    height: 25vh;
     padding: 1.5em;
     color: $sp-lightBlue;
     font-family: $sp-titles;

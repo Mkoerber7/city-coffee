@@ -1,20 +1,21 @@
 /*
 Error: Undefined variable: "$sp-lightBlue".
-        on line 5 of src/styles/scss/Footer.scss
+        on line 7 of src/styles/scss/Footer.scss
 
-1: .app-footer {
-2:     width: 100%;
-3:     height: auto;
-4:     padding: 1.5em;
-5:     color: $sp-lightBlue;
-6:     font-family: $sp-titles;
-7:     text-align: center;
-8: }
-9: 
-10: .disclaimer {
+2:     position: absolute;
+3:     bottom: 0;
+4:     width: 100%;
+5:     height: 25vh;
+6:     padding: 1.5em;
+7:     color: $sp-lightBlue;
+8:     font-family: $sp-titles;
+9:     text-align: center;
+10: }
+11: 
+12: .disclaimer {
 
 Backtrace:
-src/styles/scss/Footer.scss:5
+src/styles/scss/Footer.scss:7
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
@@ -68,4 +69,4 @@ src/styles/scss/Footer.scss:5
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$sp-lightBlue\".\A         on line 5 of src/styles/scss/Footer.scss\A \A 1: .app-footer {\A 2:     width: 100%;\A 3:     height: auto;\A 4:     padding: 1.5em;\A 5:     color: $sp-lightBlue;\A 6:     font-family: $sp-titles;\A 7:     text-align: center;\A 8: }\A 9: \A 10: .disclaimer {"; }
+  content: "Error: Undefined variable: \"$sp-lightBlue\".\A         on line 7 of src/styles/scss/Footer.scss\A \A 2:     position: absolute;\A 3:     bottom: 0;\A 4:     width: 100%;\A 5:     height: 25vh;\A 6:     padding: 1.5em;\A 7:     color: $sp-lightBlue;\A 8:     font-family: $sp-titles;\A 9:     text-align: center;\A 10: }\A 11: \A 12: .disclaimer {"; }
